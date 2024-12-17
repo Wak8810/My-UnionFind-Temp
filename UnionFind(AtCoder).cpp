@@ -12,12 +12,12 @@ struct UnionFind{
     vector<int> rank;//高さ
     //vector<int> size;//サイズ
 
-    //高さ
+    //高さでの更新をする場合
     UnionFind(int n) : parent(n),rank(n,0){
         for(int i=0;i<n;i++) parent[i] = i;
     }
 
-    //サイズ
+    //サイズでの更新をする場合
     /*
     UnionFind(int n) : parent(n),size(n,1){
         for(int i=0;i<n;i++) parent[i] = i;
@@ -60,6 +60,7 @@ struct UnionFind{
         return true;
     }
     */
+    //同じかどうか
     bool isSame(int x,int y){
         return (findroot(x) == findroot(y));
     }
