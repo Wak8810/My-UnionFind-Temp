@@ -60,7 +60,7 @@ struct UnionFind{
         return true;
     }
     */
-}
+};
 
 int main(){
   //使用方法

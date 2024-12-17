@@ -56,10 +56,10 @@ struct UnionFind{
         return true;
     }
     */
-}
+};
 
 int main(){
-  //使用方法
+    //使用方法
     UnionFind uf(5);//要素数5
 
     cout << uf.findroot(3) << " " << uf.findroot(4) << endl;
