@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 using ll = long long;
 #define rep(i, n) for (int i = 0; i < (int)(n); i++)
@@ -56,13 +57,25 @@ struct UnionFind{
         return true;
     }
     */
+    bool isSame(int x,int y){
+        return (findroot(x) == findroot(y));
+    }
 };
 
 int main(){
     //使用方法
     UnionFind uf(5);//要素数5
+    bool check;
 
     cout << uf.findroot(3) << " " << uf.findroot(4) << endl;
-    uf.unite(3,4);
+    check = uf.isSame(3,4);//一緒ではないためfalse
+    cout << (check ? "True" : "False") << endl;
+
+    
+    uf.unite(3,4);//3、4の根を一致させる
     cout << uf.findroot(3) << " " << uf.findroot(4) << endl;
+    check = uf.isSame(3,4);//一緒のためtrue
+    cout << (check ? "True" : "False") << endl;
+    
 }
+
